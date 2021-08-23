@@ -43,3 +43,13 @@ def test_post_new_project():
     assert request.status_code == 201, 'Código da resposta diferente de 201'
 
     initial_delete_for_test(payload_name)
+
+
+def test_post_some_project():
+    initial_delete_for_test(payload_name)
+    initial_insert_for_test()
+
+    request = httpx.post(url_base, json=payload, headers=headers)
+    assert request.status_code == 400, 'Código da resposta diferente de 400'
+
+    initial_delete_for_test(payload_name)
