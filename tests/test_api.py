@@ -34,3 +34,12 @@ def test_get_by_name_project():
     assert request.status_code == 200, 'Código da resposta diferente de 200'
 
     initial_delete_for_test(payload_name)
+
+
+def test_post_new_project():
+    initial_delete_for_test(payload_name)
+
+    request = httpx.post(url_base, json=payload, headers=headers)
+    assert request.status_code == 201, 'Código da resposta diferente de 201'
+
+    initial_delete_for_test(payload_name)
