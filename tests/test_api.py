@@ -53,3 +53,18 @@ def test_post_some_project():
     assert request.status_code == 400, 'Código da resposta diferente de 400'
 
     initial_delete_for_test(payload_name)
+
+
+def test_post_inclusion_key_version():
+    payload_test_version = {
+        'name': 'version',
+        'packages': [
+            {"name": "Django"}
+        ]
+    }
+
+    request = httpx.post(url_base, json=payload_test_version, headers=headers)
+    django = request.json()['packages'][0]
+    assert 'version' in django, 'Versão não incluída no pacote'
+
+    initial_delete_for_test('version')
