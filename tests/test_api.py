@@ -36,7 +36,7 @@ def test_get_by_name_project():
     initial_delete_for_test(payload_name)
 
 
-def test_post_new_project():
+def test_create_new_project():
     initial_delete_for_test(payload_name)
 
     response = httpx.post(url_base, json=payload, headers=headers)
@@ -45,7 +45,7 @@ def test_post_new_project():
     initial_delete_for_test(payload_name)
 
 
-def test_post_new_projeto_unnamed():
+def test_create_new_projeto_unnamed():
     payload_unnamed = {
         'name': '',
         'packages': [
@@ -58,7 +58,7 @@ def test_post_new_projeto_unnamed():
     assert response.status_code == 400, 'Código da resposta diferente de 201'
 
 
-def test_post_some_project():
+def test_create_some_project():
     initial_delete_for_test(payload_name)
     initial_insert_for_test()
 
@@ -68,7 +68,16 @@ def test_post_some_project():
     initial_delete_for_test(payload_name)
 
 
-def test_post_inclusion_key_version():
+def test_create_project_without_packages():
+    payload_without_packages = {
+        "name": "Projeto sem pacotes"
+    }
+    response = httpx.post(
+        url_base, json=payload_without_packages, headers=headers)
+    assert response.status_code == 400, 'Código da resposta diferente de 400'
+
+
+def test_create_inclusion_key_version():
     payload_test_version = {
         'name': 'version',
         'packages': [
