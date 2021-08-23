@@ -1,6 +1,6 @@
 from rest_framework import serializers
 import requests
-from .models import PackageRelease, Project
+from api.models import PackageRelease, Project
 
 
 def consult_package_pypi(name_pakage):
@@ -38,7 +38,6 @@ class ProjectSerializer(serializers.ModelSerializer):
                 raise serializers.ValidationError({
                     "error": "One or more packages doesn't exist"
                 })
-                return
             if 'version' not in package:
                 package = {'name': package['name'],
                            'version': result['version']}
@@ -53,8 +52,9 @@ class ProjectSerializer(serializers.ModelSerializer):
         packages = validated_data["packages"]
 
         project = Project.objects.create(name=validated_data['name'])
+
         for package in packages:
             PackageRelease.objects.create(
                 project=project, name=package['name'], version=package['version'])
 
-        return Project(name=validated_data['name'])
+        return validated_data
