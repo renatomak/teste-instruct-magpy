@@ -45,6 +45,19 @@ def test_post_new_project():
     initial_delete_for_test(payload_name)
 
 
+def test_post_new_projeto_unnamed():
+    payload_unnamed = {
+        'name': '',
+        'packages': [
+            {"name": "Django"},
+            {"name": "graphene", "version": "2.0"}
+        ]
+    }
+
+    response = httpx.post(url_base, json=payload_unnamed, headers=headers)
+    assert response.status_code == 400, 'Código da resposta diferente de 201'
+
+
 def test_post_some_project():
     initial_delete_for_test(payload_name)
     initial_insert_for_test()
