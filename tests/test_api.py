@@ -24,3 +24,13 @@ def initial_insert_for_test():
 def test_get_list_projects():
     request = httpx.get(url_base)
     assert request.status_code == 200, 'Código da resposta diferente de 200'
+
+
+def test_get_by_name_project():
+    initial_delete_for_test(payload_name)
+    initial_insert_for_test()
+
+    request = httpx.get(url_base+payload_name)
+    assert request.status_code == 200, 'Código da resposta diferente de 200'
+
+    initial_delete_for_test(payload_name)
