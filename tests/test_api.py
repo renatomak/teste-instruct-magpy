@@ -76,6 +76,14 @@ def test_create_project_without_packages():
         url_base, json=payload_without_packages, headers=headers)
     assert response.status_code == 400, 'Código da resposta diferente de 400'
 
+    payload_packages_without_list = {
+        "name": "Projeto sem pacotes",
+        "packages": ""
+    }
+    response = httpx.post(
+        url_base, json=payload_packages_without_list, headers=headers)
+    assert response.status_code == 400, 'Código da resposta diferente de 400'
+
 
 def test_create_inclusion_key_version():
     payload_test_version = {
