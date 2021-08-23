@@ -76,3 +76,8 @@ def test_delete_project():
 
     response = httpx.delete(url_base+payload_name)
     assert response.status_code == 204, 'Códico diferente de 204'
+
+
+def test_delete_project_nonexistent():
+    response = httpx.delete(url_base+"xablau")
+    assert response.status_code == 404, 'Códico diferente de 404'
