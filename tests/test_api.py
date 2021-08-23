@@ -19,3 +19,8 @@ def initial_delete_for_test(package_name):
 
 def initial_insert_for_test():
     httpx.post(url_base, json=payload, headers=headers)
+
+
+def test_get_list_projects():
+    request = httpx.get(url_base)
+    assert request.status_code == 200, 'Código da resposta diferente de 200'
