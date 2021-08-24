@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 db.sqlite3
 *.venv
+api/teste_funcion.py
