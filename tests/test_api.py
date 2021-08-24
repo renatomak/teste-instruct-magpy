@@ -23,7 +23,7 @@ def initial_insert_for_test():
 
 def test_get_list_projects():
     response = httpx.get(url_base)
-    assert response.status_code == 200, 'Erro ao buscar projetos'
+    assert response.status_code == 200, "Error when fetching projects"
 
 
 def test_get_by_name_project():
@@ -31,7 +31,7 @@ def test_get_by_name_project():
     initial_insert_for_test()
 
     response = httpx.get(url_base+payload_name)
-    assert response.status_code == 200, 'Erro ao buscar projeto'
+    assert response.status_code == 200, 'Error when fetching project'
 
     initial_delete_for_test(payload_name)
 
@@ -40,7 +40,7 @@ def test_create_new_project():
     initial_delete_for_test(payload_name)
 
     response = httpx.post(url_base, json=payload, headers=headers)
-    assert response.status_code == 201, 'Erro ao criar projeto'
+    assert response.status_code == 201, 'Error creating project'
 
     initial_delete_for_test(payload_name)
 
@@ -55,7 +55,7 @@ def test_create_new_projeto_unnamed():
     }
 
     response = httpx.post(url_base, json=payload_unnamed, headers=headers)
-    assert response.status_code == 400, 'Projeto criado sem o nome'
+    assert response.status_code == 400, 'Project created without name'
 
 
 def test_create_same_project():
@@ -63,7 +63,7 @@ def test_create_same_project():
     initial_insert_for_test()
 
     response = httpx.post(url_base, json=payload, headers=headers)
-    assert response.status_code == 400, 'Projeto duplicado criado'
+    assert response.status_code == 400, 'Duplicate project created'
 
     initial_delete_for_test(payload_name)
 
@@ -74,7 +74,7 @@ def test_create_project_without_packages():
     }
     response = httpx.post(
         url_base, json=payload_without_packages, headers=headers)
-    assert response.status_code == 400, 'Projeto criado sem a chave "packeges"'
+    assert response.status_code == 400, 'Project created without the "packeges" key'
 
     payload_packages_without_list = {
         "name": "Projeto sem pacotes",
@@ -82,7 +82,7 @@ def test_create_project_without_packages():
     }
     response = httpx.post(
         url_base, json=payload_packages_without_list, headers=headers)
-    assert response.status_code == 400, 'Projeto criado, "packages" com formato invalido'
+    assert response.status_code == 400, 'Project created, "packages" with invalid format'
 
 
 def test_create_package_without_version():
@@ -95,7 +95,7 @@ def test_create_package_without_version():
 
     response = httpx.post(url_base, json=payload_test_version, headers=headers)
     django = response.json()['packages'][0]
-    assert 'version' in django, 'Versão não incluída no pacote'
+    assert 'version' in django, 'Version not included in the package'
 
     initial_delete_for_test('version')
 
@@ -108,7 +108,7 @@ def test_ceate_invalid_package():
         ]
     }
     response = httpx.post(url_base, json=payload_test, headers=headers)
-    assert response.status_code == 400, 'Pacote com nome invalido'
+    assert response.status_code == 400, 'Invalid package name'
 
 
 def test_create_package_invalid_version():
@@ -119,7 +119,7 @@ def test_create_package_invalid_version():
         ]
     }
     response = httpx.post(url_base, json=payload_test, headers=headers)
-    assert response.status_code == 400, 'Pacote com versão inválida'
+    assert response.status_code == 400, 'Package with invalid version'
 
 
 def test_delete_project():
@@ -127,9 +127,9 @@ def test_delete_project():
     initial_insert_for_test()
 
     response = httpx.delete(url_base+payload_name)
-    assert response.status_code == 204, 'Códico diferente de 204'
+    assert response.status_code == 204, 'Error deleting project'
 
 
 def test_delete_project_nonexistent():
     response = httpx.delete(url_base+"xablau")
-    assert response.status_code == 404, 'Códico diferente de 404'
+    assert response.status_code == 404, 'Error deleting non-existent project'
