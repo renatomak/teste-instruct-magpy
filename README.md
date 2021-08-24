@@ -44,6 +44,7 @@ A aplicação utiliza a API pública da PyPi e tem como principal objetivo viabi
 ## Como executar o projeto
 
 Acesse a aplicação em [MagPy](https://instruct-api-magpy.herokuapp.com/)
+Para incluir novos projetos é necessário usar a opção 'Raw data', já que as listas não são suportadas, atualmente, no HTML form.
 
 ## Como testar a aplicação
 
