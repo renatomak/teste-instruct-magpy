@@ -33,11 +33,32 @@ A aplicação utiliza a API pública da PyPi e tem como principal objetivo viabi
 <img src="https://cdn.icon-icons.com/icons2/112/PNG/512/python_18894.png" alt="python" width="40" height="40" style="max-width:100%;" /> &nbsp; &nbsp; &nbsp; &nbsp;
 <img src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_django_icon_130645.png" alt="django" width="40" height="40" style="max-width:100%;" /> &nbsp; &nbsp; &nbsp; &nbsp;
 <img src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_sqlite_icon_130153.png" alt="sqlite" width="40" height="40" style="max-width:100%;" /> &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png" alt="vscode" width="40" height="40" style="max-width:100%;" /> &nbsp; &nbsp; &nbsp; &nbsp;
 
 ## Implantação em produção
 
 <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/heroku_plain_wordmark_logo_icon_146480.png" alt="heroku" width="40" height="40" style="max-width:100%;" /> &nbsp; &nbsp; &nbsp; &nbsp;
 
-# Como executar o projeto localmente
+# Como executar o projeto
 
 ## Como testar a aplicação
+
+1 - clone o [repositório](https://github.com/renatomak/teste-instruct-magpy) do projeto;
+
+      - `git clone https://github.com/renatomak/teste-instruct-magpy.git`.
+      - Entre na pasta do repositório que você acabou de clonar: - `teste-instruct-magpy`
+
+2. Crie o ambiente virtual para o projeto;
+
+   - `python3 -m venv .venv && source .venv/bin/activate`
+
+3. Instale as dependências;
+
+   - `python3 -m pip install -r requirements.txt`
+
+4. Execute os testes;
+
+   - Em um terminal, inicie o servidor
+   - `python manage.py runserver`
+   - E terminal diferente digite o comando:
+   - `python3 -m pytest`
