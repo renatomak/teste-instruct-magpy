@@ -1,5 +1,5 @@
-from rest_framework import serializers
 import requests
+from rest_framework import serializers
 from api.models import PackageRelease, Project
 
 
@@ -62,8 +62,3 @@ class ProjectSerializer(serializers.ModelSerializer):
                 version=package['version'])
 
         return project
-
-    def update(self, instance, validated_data):
-        instance.name = validated_data.get('name', instance.name)
-        instance.save()
-        return instance

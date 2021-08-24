@@ -39,7 +39,7 @@ schema_view = get_schema_view(
 
 router = routers.SimpleRouter()
 router.register(r'projects', views.ProjectViewSet)
-router.register('', views.ProjectViewSet)
+
 
 urlpatterns = [
     re_path(r'^swagger(?P<format>\.json|\.yaml)$',
@@ -50,5 +50,6 @@ urlpatterns = [
          cache_timeout=0), name='schema-redoc'),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('', include(router.urls)),
+    path('', views.Home, name='home'),
+
 ]
