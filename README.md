@@ -43,6 +43,8 @@ A aplicação utiliza a API pública da PyPi e tem como principal objetivo viabi
 
 ## Como executar o projeto
 
+Acesse a aplicação em [MagPy](https://instruct-api-magpy.herokuapp.com/)
+
 ## Como testar a aplicação
 
 1 - clone o [repositório](https://github.com/renatomak/teste-instruct-magpy) do projeto;
