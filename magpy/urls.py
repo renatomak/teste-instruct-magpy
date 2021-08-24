@@ -21,8 +21,10 @@ from api import views
 
 router = routers.SimpleRouter()
 router.register(r'projects', views.ProjectViewSet)
+router.register('', views.ProjectViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('', include(router.urls)),
 ]
