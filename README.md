@@ -46,7 +46,8 @@ A aplicação utiliza a API pública da PyPi e tem como principal objetivo viabi
 1 - clone o [repositório](https://github.com/renatomak/teste-instruct-magpy) do projeto;
 
       - `git clone https://github.com/renatomak/teste-instruct-magpy.git`.
-      - Entre na pasta do repositório que você acabou de clonar: - `teste-instruct-magpy`
+      - Entre na pasta do repositório que você acabou de clonar:
+      - `teste-instruct-magpy`
 
 2. Crie o ambiente virtual para o projeto;
 
