@@ -74,7 +74,7 @@ def test_create_project_without_packages():
     }
     response = httpx.post(
         url_base, json=payload_without_packages, headers=headers)
-    assert response.status_code == 400, 'Project created without the "packeges" key'
+    assert response.status_code == 400, 'Project create without "packeges" key'
 
     payload_packages_without_list = {
         "name": "Projeto sem pacotes",
@@ -82,7 +82,7 @@ def test_create_project_without_packages():
     }
     response = httpx.post(
         url_base, json=payload_packages_without_list, headers=headers)
-    assert response.status_code == 400, 'Project created, "packages" with invalid format'
+    assert response.status_code == 400, '"packages" with invalid format'
 
 
 def test_create_package_without_version():

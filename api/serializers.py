@@ -57,6 +57,8 @@ class ProjectSerializer(serializers.ModelSerializer):
 
         for package in packages:
             PackageRelease.objects.create(
-                project=project, name=package['name'], version=package['version'])
+                project=project,
+                name=package['name'],
+                version=package['version'])
 
         return validated_data
