@@ -61,4 +61,9 @@ class ProjectSerializer(serializers.ModelSerializer):
                 name=package['name'],
                 version=package['version'])
 
-        return validated_data
+        return project
+
+    def update(self, instance, validated_data):
+        instance.name = validated_data.get('name', instance.name)
+        instance.save()
+        return instance
