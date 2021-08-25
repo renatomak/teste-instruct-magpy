@@ -8,9 +8,7 @@
 
 ## Sobre o projeto
 
-Esta é uma API REST construída na fase de Teste Técnico para a vaga de Desenvolvedor(a) Python Júnior da [Instruct](https://instruct.com.br/).
-
-Esta aplicação se destina ao gerenciamento de projetos com foto em tecnologia. Auxiliando o usuário na pesquisa de pacotes válidos com versões válidas. Para casos em que o usuário não tenha uma versão definida, será atribuída a última versão do pacote.
+Esta é uma API REST construída na fase de Teste Técnico para a vaga de Desenvolvedor(a) Python Júnior da [Instruct](https://instruct.com.br/) e tem como principal objetivo o gerenciamento de projetos com foco em tecnologia. Os projetos cadastrados serão validados por nome e versão. Para casos em que o usuário não tenha uma versão definida, será atribuída a última versão do pacote.
 A aplicação utiliza a API pública da PyPi e tem como principal objetivo viabilizar a organização de projetos tecnológicos com pacotes consistentes e válidos.
 
 ## Itens obrigatórios:
