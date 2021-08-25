@@ -17,5 +17,169 @@
     <div class="col-8 m-auto pt-3 pb-2 text-center">
       <a href="/api/projects/" class="btn btn-success"> START </a>
     </div>
+
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+      <h1>API REST - MagPy</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-2 pb-2">
+      <div>
+        <h2>Sobre o projeto</h2>
+
+        <div class="text-justify">
+          Esta é uma API REST construída na fase de Teste Técnico para a vaga de
+          Desenvolvedor(a) Python Júnior da
+          <a href="https://instruct.com.br/" target="_blank">Instruct</a>. Esta
+          aplicação se destina ao gerenciamento de projetos com foto em
+          tecnologia. Auxiliando o usuário na pesquisa de pacotes válidos com
+          versões válidas. Para casos em que o usuário não tenha uma versão
+          definida, será atribuída a última versão do pacote. A aplicação
+          utiliza a API pública da PyPi e tem como principal objetivo viabilizar
+          a organização de projetos tecnológicos com pacotes consistentes e
+          válidos.
+        </div>
+      </div>
+
+      <div class="my-5">
+        <h2>Itens obrigatórios</h2>
+
+        <div class="text-justify ms-5">
+          <ol class="list-group">
+            <li class="mb-1">
+              Sua API deve validar o projeto cadastrado: todos os pacotes
+              informados devem estar cadastrados no PyPI. São validados o nome e
+              a versão do pacote.
+            </li>
+            <li class="mb-1">
+              Quando o pacote vem apenas com o nome, sua API deve assumir que é
+              preciso usar a última versão publicada no PyPI.
+            </li>
+            <li class="mb-1">
+              Se um dos pacotes informados não existir, ou uma das versões
+              especificadas for inválida, um erro deve ser retornado.
+            </li>
+            <li class="mb-1">
+              Deve ser possível visitar projetos previamente cadastrados, usando
+              o nome na URL.
+            </li>
+            <li class="mb-1">Deve ser possível deletar projetos pelo nome.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="my-5">
+        <h2>Itens opcionais</h2>
+
+        <div class="text-justify ms-5">
+          <ol class="list-group">
+            <li class="mb-1">Escrever testes automatizados</li>
+            <li class="mb-1">
+              Alterar README.md. Descreva sua aplicação, explique o que ela faz
+              e porque é útil.
+            </li>
+            <li class="mb-1">Documentar sua API com Swagger UI ou ReDoc</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="my-5">
+        <h2>Tecnologias utilizadas</h2>
+
+        <div class="text-justify ms-3">
+          <img
+            src="./img/python_18894.png"
+            alt="python"
+            width="40"
+            height="40"
+            style="max-width: 100%"
+          />
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <img
+            src="./img/file_type_django_icon_130645.png"
+            alt="django"
+            width="40"
+            height="40"
+            style="max-width: 100%"
+          />
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <img
+            src="./img/file_type_sqlite_icon_130153.png"
+            alt="sqlite"
+            width="40"
+            height="40"
+            style="max-width: 100%"
+          />
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <img
+            src="./img/file_type_vscode_icon_130084.png"
+            alt="vscode"
+            width="40"
+            height="40"
+            style="max-width: 100%"
+          />
+          &nbsp; &nbsp; &nbsp; &nbsp;
+        </div>
+      </div>
+
+      <div class="my-5">
+        <h2>Implantação em produção</h2>
+
+        <div class="text-justify ms-3">
+          <img
+            src="./img/heroku_icon_130912.png"
+            alt="heroku"
+            width="40"
+            height="40"
+            style="max-width: 100%"
+          />
+          &nbsp; &nbsp; &nbsp; &nbsp;
+        </div>
+      </div>
+
+      <div class="my-5">
+        <h2>Como executar o projeto</h2>
+
+        <div class="text-justify ms-3">
+          Acesse a aplicação em
+          <a href="https://instruct-api-magpy.herokuapp.com/api/projects/"
+            >MagPy</a
+          >
+        </div>
+      </div>
+      <div>
+        <h2>Como testar a aplicação</h2>
+
+        <div class="text-justify ms-5">
+          <ol class="list-group">
+            <li class="mb-1">
+              Crie o ambiente virtual para o projeto
+              <ul>
+                <li>python3 -m venv .venv && source .venv/bin/activate</li>
+              </ul>
+            </li>
+            <li class="mb-1">
+              Instale as dependências;
+              <ul>
+                <li>python3 -m pip install -r requirements.txt</li>
+              </ul>
+            </li>
+            <li class="mb-1">
+              Execute os testes;
+              <ul>
+                <li>Em um terminal, inicie o servidor</li>
+                <ul>
+                  <li>python manage.py runserver</li>
+                </ul>
+
+                <li>E terminal diferente digite o comando:</li>
+                <ul>
+                  <li>python3 -m pytest</li>
+                </ul>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
